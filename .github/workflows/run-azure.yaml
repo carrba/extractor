@@ -1,0 +1,14 @@
+name: run-command-azure
+
+on:
+  workflow_call:
+  workflow_dispatch:
+    
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write file
+        id: write_file
+        run: |
+          echo "hello from github actions"
