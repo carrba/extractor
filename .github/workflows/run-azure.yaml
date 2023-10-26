@@ -19,4 +19,4 @@ jobs:
         run: |
           az login --service-principal -u ${{ secrets.azure_client_id }} -p ${{ secrets.azure_secret }} --tenant ${{ secrets.azure_tenant_id }}
           az vm run-command invoke --resource-group rg-github-actions -n vm1 --command-id RunShellScript --scripts "echo 'hello from GA' > /tmp/ga.txt"
-          az vm run-command invoke --resource-group rg-github-actions -n vm1 --command-id RunShellScript --scripts "aws s3 cp /tmp/ga.txt s3://$ {{ secrets.aws_bucket }}"
+          az vm run-command invoke --resource-group rg-github-actions -n vm1 --command-id RunShellScript --scripts "aws s3 cp /tmp/ga.txt s3://$ {{ secrets.aws_bucket }}/"
